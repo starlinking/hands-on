@@ -1,7 +1,7 @@
 # hands-on
 All Best Practices about Networking, Automation, Virtualization, Cloud and DevOps
 
-## FASTPATH::VLAN 
+## FASTPATH::Multicast
 
 <details>
   <summary>Configure the switch for static forwarding of multicast addressed flows
