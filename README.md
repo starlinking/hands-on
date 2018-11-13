@@ -1,11 +1,14 @@
 # hands-on
 All Best Practices about Networking, Automation, Virtualization, Cloud and DevOps
-## collapsible markdown?
 
-<details><summary>CLICK ME</summary>
+## FASTPATH::VLAN 
+
+<details>
+  <summary>New create a VLAN
+  </summary>
 <p>
 
-#### yes, even hidden code blocks!
+#### Descriptions ......
 
 ```python
 print("hello world!")
