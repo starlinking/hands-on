@@ -1,0 +1,10 @@
+show serviceport 
+enable
+show ip ssh
+show port all
+show ip ssh
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit

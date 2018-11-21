@@ -1,0 +1,1580 @@
+DEBUG:paramiko.transport:starting thread (client mode): 0x72290810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Thu Nov 15 17:38:03 2018 from 192.168.1.110
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: s
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: how serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #onfig
+                       ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #interface 1/0/18
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #switchport access vlan 100
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #exit
+
+(DataPlane Switching) >exit
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0x931c8810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:17:12 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: s
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: how serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #onfig
+                       ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #interface 1/0/18
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #switchport access vlan 100
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #exit
+
+(DataPlane Switching) >exit
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0x1ab46810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:18:31 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0xf965b810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:20:19 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: s
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: how serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #onfig
+                       ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #interface 1/0/18
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #switchport access vlan 100
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #exit
+
+(DataPlane Switching) >exit
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0xd6490810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:20:44 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: show serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #onfig
+                       ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #interface 1/0/18
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #switchport access vlan 100
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #exit
+
+(DataPlane Switching) >exit
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0xc7492810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:21:06 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: s
+DEBUG:netmiko:read_channel: how serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #onfig
+                       ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #interface 1/0/18
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #switchport access vlan 100
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #exit
+
+(DataPlane Switching) >exit
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0x524c3810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:22:28 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: s
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: how serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #onfig
+                       ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #interface 1/0/18
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #switchport access vlan 100
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #exit
+
+(DataPlane Switching) >exit
+                        ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0xcdaa5810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:39:44 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+show ip ssh
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: show serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #how ip ssh
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #config
+
+(DataPlane Switching) (Config)#interface 1/0/18
+
+(DataPlane Switching) (Interface 1/0/18)#switchport access vlan 100
+
+VLAN ID not found.
+
+(DataPlane Switching) (Interface 1/0/18)#exit
+
+(DataPlane Switching) (Config)#exit
+
+(DataPlane Switching) #
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:netmiko:Pattern is: #
+DEBUG:netmiko:_read_channel_expect read_data: exit
+
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0x7d16810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:41:44 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+show ip ssh
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: s
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: how serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #how ip ssh
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #config
+
+(DataPlane Switching) (Config)#interface 1/0/18
+
+(DataPlane Switching) (Interface 1/0/18)#switchport access vlan 100
+
+VLAN ID not found.
+
+(DataPlane Switching) (Interface 1/0/18)#exit
+
+(DataPlane Switching) (Config)#exit
+
+(DataPlane Switching) #
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) #
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
+DEBUG:paramiko.transport:starting thread (client mode): 0x3fbc3810L
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.2
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_6.7p1 Debian-5+deb8u4
+INFO:paramiko.transport:Connected (version 2.0, client OpenSSH_6.7p1)
+DEBUG:paramiko.transport:kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEBUG:paramiko.transport:Kex agreed: ecdh-sha2-nistp256
+DEBUG:paramiko.transport:HostKey agreed: ecdsa-sha2-nistp256
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Adding ecdsa-sha2-nistp256 host key for 192.168.1.10: 8628127e5bbda809ded6a5f5a838052f
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication (password) successful!
+DEBUG:paramiko.transport:[chan 0] Max packet in: 32768 bytes
+DEBUG:paramiko.transport:[chan 0] Max packet out: 32768 bytes
+DEBUG:paramiko.transport:Secsh channel 0 opened.
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:paramiko.transport:[chan 0] Sesch channel 0 request ok
+DEBUG:netmiko:read_channel: Last login: Tue Nov 20 17:43:51 2018 from 192.168.1.101
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:In disable_paging
+DEBUG:netmiko:Command: terminal length 0
+
+DEBUG:netmiko:write_channel: terminal length 0
+
+DEBUG:netmiko:Pattern is: \(DataPlane\ Switching\)\ 
+DEBUG:netmiko:_read_channel_expect read_data: 
+(DataPlane Switching) >
+DEBUG:netmiko:Pattern found: \(DataPlane\ Switching\)\  
+(DataPlane Switching) >
+DEBUG:netmiko:
+(DataPlane Switching) >
+DEBUG:netmiko:Exiting disable_paging
+DEBUG:netmiko:read_channel: t
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: erminal length 0
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) >
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) >
+DEBUG:netmiko:write_channel: show serviceport 
+enable
+show ip ssh
+show port all
+show ip ssh
+config
+interface 1/0/18
+switchport access vlan 100
+exit
+exit
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: s
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: how serviceport 
+
+Interface Status............................... Up
+IP Address..................................... 192.168.1.10
+Subnet Mask.................................... 255.255.255.0
+Default Gateway................................ 192.168.1.1
+Configured IPv4 Protocol....................... None
+Burned In MAC Address.......................... 74:6A:3A:10:0D:99
+
+(DataPlane Switching) >enable
+
+(DataPlane Switching) #show ip ssh
+
+SSH Configuration
+
+Administrative Mode: .......................... Enabled
+SSH Port: ..................................... 222
+Protocol Levels: .............................. Versions 1 and 2
+SSH Sessions Currently Active: ................ 1
+Max SSH Sessions Allowed: ..................... 5
+SSH Timeout: .................................. 5
+Keys Present: ................................. DSA RSA
+Key Generation In Progress: ................... None
+
+(DataPlane Switching) #show port all
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+1/0/1            Enable    10G Full              Down   Enable  Enable long
+1/0/2            Enable    10G Full              Down   Enable  Enable long
+1/0/3            Enable    10G Full              Down   Enable  Enable long
+1/0/4            Enable    10G Full              Down   Enable  Enable long
+1/0/5            Enable    10G Full              Down   Enable  Enable long
+1/0/6            Enable    10G Full              Down   Enable  Enable long
+1/0/7            Enable    10G Full              Down   Enable  Enable long
+1/0/8            Enable    10G Full              Down   Enable  Enable long
+1/0/9            Enable    10G Full              Down   Enable  Enable long
+1/0/10           Enable    10G Full              Down   Enable  Enable long
+1/0/11           Enable    40G Full              Down   Enable  Enable long
+1/0/12           Enable    40G Full              Down   Enable  Enable long
+1/0/13           Enable    10G Full              Down   Enable  Enable long
+1/0/14           Enable    10G Full              Down   Enable  Enable long
+1/0/15           Enable    10G Full              Down   Enable  Enable long
+1/0/16           Enable    10G Full              Down   Enable  Enable long
+1/0/17           Enable    10G Full              Down   Enable  Enable long
+1/0/18           Enable    10G Full              Down   Enable  Enable long
+1/0/19           Enable    10G Full              Down   Enable  Enable long
+--More-- or (q)uit                  1/0/20           Enable    10G Full              Down   Enable  Enable long
+1/0/31           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/32           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/41           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/0/42           Enable    1000 Full  1000 Full  Up     Enable  Enable long
+1/3/1            Enable                          Down   Disable N/A    N/A
+1/3/2            Enable                          Down   Disable N/A    N/A
+1/3/3            Enable                          Down   Disable N/A    N/A
+1/3/4            Enable                          Down   Disable N/A    N/A
+1/3/5            Enable                          Down   Disable N/A    N/A
+
+(DataPlane Switching) #how ip ssh
+                         ^
+% Invalid input detected at '^' marker.
+
+(DataPlane Switching) #config
+
+(DataPlane Switching) (Config)#interface 1/0/18
+
+(DataPlane Switching) (Interface 1/0/18)#switchport access vlan 100
+
+VLAN ID not found.
+
+(DataPlane Switching) (Interface 1/0/18)#exit
+
+(DataPlane Switching) (Config)#exit
+
+(DataPlane Switching) #
+DEBUG:netmiko:write_channel: 
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+(DataPlane Switching) #
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:exit_config_mode: 
+DEBUG:netmiko:write_channel: exit
+
+DEBUG:paramiko.transport:EOF in transport thread
