@@ -1,8 +1,11 @@
 show serviceport 
 enable
+vlan database
+vlan 100
+exit
 show ip ssh
 show port all
-show ip ssh
+y
 config
 interface 1/0/18
 switchport access vlan 100
