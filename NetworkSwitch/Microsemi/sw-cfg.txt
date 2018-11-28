@@ -1,0 +1,8 @@
+show version
+y
+show ip interface brief 
+show interface * status 
+y
+configure terminal
+ip route 0.0.0.0 0.0.0.0 192.168.10.254 1
+end
